@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Aceptarías salir con Elbleyyer?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: pink; /* Fondo rosado */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: black;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .flecha {
+            font-size: 30px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        #nombre {
+            font-size: 28px;
+            color: black;
+            background-color: pink;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        #aceptar {
+            background-color: green; /* Botón verde */
+            color: white;
+            font-size: 30px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #no {
+            background-color: red; /* Botón rojo */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #mensaje {
+            font-size: 24px;
+            color: black;
+            margin-top: 20px;
+            display: none; /* Oculto inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Aceptarías salir con este tipo chill de cojones?</h1>
+    <div class="flecha">↓</div>
+    <div id="nombre">Elbleyyer</div>
+    <button id="aceptar">Aceptar</button>
+    <button id="no">No</button>
+    <div id="mensaje">¡Gracias, sabía que aceptarías!</div>
+
+    <script>
+        const botonAceptar = document.getElementById("aceptar");
+        const botonNo = document.getElementById("no");
+        const mensaje = document.getElementById("mensaje");
+
+        // Hacer que el botón "No" se mueva al azar
+        botonNo.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - botonNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - botonNo.offsetHeight);
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        });
+
+        // Hacer que el botón "Aceptar" crezca y muestre el mensaje
+        botonAceptar.addEventListener("click", () => {
+            botonAceptar.style.transform = "scale(1.2)";
+            mensaje.style.display = "block";
+        });
+    </script>
+</body>
+</html>
